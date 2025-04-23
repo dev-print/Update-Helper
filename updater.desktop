@@ -1,0 +1,11 @@
+[[Desktop Entry]
+Type=Application
+Name=Update-Helper
+Version=1.0
+Comment=An System Update Helper.
+Path=/opt/Update-Helper
+Exec=python3 startup.py
+Icon=/path/to/icon
+Terminal=true
+Categories=CLI,AUR,UPDATER,UPDATE
+]
