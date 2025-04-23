@@ -450,3 +450,4 @@ if language_selected == "de":
 elif language_selected == "en":
     os.system("clear")
     EN_Menu()
+
