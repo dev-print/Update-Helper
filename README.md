@@ -111,3 +111,119 @@ Für eine systemweite Installation:
 ## Fehler melden und Vorschläge machen
 
 Wenn du einen Fehler findest oder einen Verbesserungsvorschlag hast, melde dich bitte im [Issue Tracker](https://github.com/dev-print/update-helper/issues) des Projekts.
+
+---
+
+# Update-Helper
+
+A simple tool for managing system updates with various AUR helpers.
+
+## Description
+
+Update-Helper is a utility for Arch Linux and related distributions that simplifies the process of system updating using various AUR helpers (Yay, Paru). It provides a user-friendly interface to easily update AUR packages.
+
+## Features
+
+* **Multiple AUR helper support:** Works with Yay and Paru.
+* **Easy setup:** One-time setup with language selection and AUR helper choice.
+* **Desktop integration:** Option to create a desktop file for easy launching.
+* **System-wide installation possible:** Can be installed locally or system-wide.
+
+## Installation
+
+1.  **Clone repository or download files:**
+
+    Clone the repository with Git:
+
+    ```bash
+    git clone [https://github.com/dev-print/update-helper.git](https://github.com/dev-print/update-helper.git)
+    cd update-helper
+    ```
+
+    Or download the files as a ZIP archive and extract them.
+
+2.  **Ensure directories and files are present:**
+
+    Make sure the following directories and files exist:
+
+    * `settings/` directory
+    * `AUR-Helpers/` directory with the appropriate Python scripts
+
+## Usage
+
+### First Run
+
+1.  **Install Python 3:**
+
+    Ensure that Python 3 is installed on your system.
+
+2.  **Run the script:**
+
+    Execute the `startup.py` script:
+
+    ```bash
+    python3 startup.py
+    ```
+
+    On the first run, you will be guided through a setup process:
+
+    1.  Language selection (German or English)
+    2.  Selection of preferred AUR helper (Yay or Paru)
+
+### Setting up the Desktop File
+
+To easily launch Update-Helper from your desktop menu, you can set up a desktop file:
+
+1.  **Copy the file:**
+
+    Copy the `updater.desktop` file to the local applications directory:
+
+    ```bash
+    cp updater.desktop ~/.local/share/applications/
+    ```
+
+2.  **Edit the file:**
+
+    Edit the `~/.local/share/applications/updater.desktop` file with a text editor to specify the correct paths:
+
+    * Set `Path=/path/to/update-helper` (e.g., `/home/username/update-helper`)
+    * Set `Exec=python3 /path/to/update-helper/startup.py` (e.g., `/home/username/update-helper/startup.py`)
+    * Set `Icon=/path/to/icon` (optional, path to an icon image)
+
+3.  **Make the file executable:**
+
+    Make the desktop file executable:
+
+    ```bash
+    chmod +x ~/.local/share/applications/updater.desktop
+    ```
+
+### System-wide Installation
+
+For a system-wide installation:
+
+1.  **Copy the files:**
+
+    Copy the files to `/opt/Update-Helper/`:
+
+    ```bash
+    sudo cp -r . /opt/Update-Helper/
+    ```
+
+2.  **Copy the desktop file:**
+
+    Copy the desktop file to `/usr/share/applications/`:
+
+    ```bash
+    sudo cp updater.desktop /usr/share/applications/
+    ```
+
+    Adjust the paths in the `updater.desktop` file accordingly (as described above).
+
+### Pamac
+
+**Pamac is currently not supported.** This tool is limited to using Yay and Paru.
+
+## Report Bugs and Suggestions
+
+If you find a bug or have a suggestion for improvement, please report it in the project's [Issue Tracker](https://github.com/dev-print/update-helper/issues).
