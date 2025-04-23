@@ -1,7 +1,34 @@
 import subprocess
 import os
 
+
+class Banners:
+    setup = """
+    
+███████╗██╗██████╗ ███████╗████████╗    ███████╗███████╗████████╗██╗   ██╗██████╗ 
+██╔════╝██║██╔══██╗██╔════╝╚══██╔══╝    ██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗
+█████╗  ██║██████╔╝███████╗   ██║       ███████╗█████╗     ██║   ██║   ██║██████╔╝
+██╔══╝  ██║██╔══██╗╚════██║   ██║       ╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝ 
+██║     ██║██║  ██║███████║   ██║       ███████║███████╗   ██║   ╚██████╔╝██║     
+╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝       ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝     
+                                                                                  
+"""
+
+    aurhelper = """
+
+ █████╗ ██╗   ██╗██████╗     ██╗  ██╗███████╗██╗     ██████╗ ███████╗██████╗ 
+██╔══██╗██║   ██║██╔══██╗    ██║  ██║██╔════╝██║     ██╔══██╗██╔════╝██╔══██╗
+███████║██║   ██║██████╔╝    ███████║█████╗  ██║     ██████╔╝█████╗  ██████╔╝
+██╔══██║██║   ██║██╔══██╗    ██╔══██║██╔══╝  ██║     ██╔═══╝ ██╔══╝  ██╔══██╗
+██║  ██║╚██████╔╝██║  ██║    ██║  ██║███████╗███████╗██║     ███████╗██║  ██║
+╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝    ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝
+                                                                             
+"""
+
+
 def Deutsch():
+    os.system("clear")
+    print(Banners.aurhelper)
     aurhelper_deu = input(
         """Bitte wähle deinen Package manager.
 1. Yay
@@ -23,7 +50,6 @@ Bitte die nummer eingeben: """
             print("Ungültige Eingabe. Yay wird als Standard verwendet.")
             aur_helper_file.write("yay")
 
-    # Set first-setup to false after completion
     with open("settings/first-setup.txt", "w") as first_setup_file:
         first_setup_file.write("false")
 
@@ -31,16 +57,18 @@ Bitte die nummer eingeben: """
         get_checker_filer = check_aur_helper.read().strip()
 
     if get_checker_filer == "yay":
-        os.system('python3 AUR-Helpers/yay.py')
-      
+        os.system("python3 menu.py")
+
     elif get_checker_filer == "paru":
-        os.system('python3 AUR-Helpers/paru.py')
-      
+        os.system("python3 menu.py")
+
     elif get_checker_filer == "pamac":
-        os.system('python3 AUR-Helpers/pamac.py')
+        os.system("python3 menu.py")
 
 
 def English():
+    os.system("clear")
+    print(Banners.aurhelper)
     aurhelper_eng = input(
         """Please choose your package manager.
 1. Yay
@@ -67,40 +95,28 @@ Please enter the number: """
         first_setup_file.write("false")
 
 
-class Banners:
-    setup = """
-    
-███████╗██╗██████╗ ███████╗████████╗    ███████╗███████╗████████╗██╗   ██╗██████╗ 
-██╔════╝██║██╔══██╗██╔════╝╚══██╔══╝    ██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗
-█████╗  ██║██████╔╝███████╗   ██║       ███████╗█████╗     ██║   ██║   ██║██████╔╝
-██╔══╝  ██║██╔══██╗╚════██║   ██║       ╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝ 
-██║     ██║██║  ██║███████║   ██║       ███████║███████╗   ██║   ╚██████╔╝██║     
-╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝       ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝     
-                                                                                  
-"""
-
-
 with open("settings/first-setup.txt", "r") as first_setup_file:
     get_setup_file = first_setup_file.read().strip()
 
 if get_setup_file == "true":
+    os.system("clear")
     print(Banners.setup)
 
     print("Welcome, this is you're first Setup. I hope. Lets Begin!")
 
     set_language = input(
-        """Please select an Language. Input an Country Code listed above.
-                         1. DE
-                         2. EN
-    """
+        """Please select an Language.
+1. DE
+2. EN
+Please input the Country code (DONT CAPITALIZE THEM.) or the Number: """
     )
 
-    if set_language.lower() == "en":
+    if set_language.lower() == "en" or set_language == "2":
         language = open("settings/language.txt", "w")
         language.write("en")
         language.close()
         English()
-    elif set_language.lower() == "de":
+    elif set_language.lower() == "de" or set_language == "1":
         language = open("settings/language.txt", "w")
         language.write("de")
         language.close()
@@ -110,10 +126,10 @@ elif get_setup_file == "false":
         check_helper = get_helper.read().strip()
 
         if check_helper == "yay":
-            os.system('python3 AUR-Helpers/yay.py')
-        
+            os.system("python3 menu.py")
+
         elif check_helper == "pamac":
-            os.system('python3 AUR-Helpers/pamac.py')
+            os.system("python3 menu.py")
 
         elif check_helper == "paru":
-            os.system('python3 AUR-Helpers/paru.py')
+            os.system("python3 menu.py")
