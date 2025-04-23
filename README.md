@@ -1,103 +1,113 @@
 # Update-Helper
 
-Ein einfaches Tool zur Verwaltung von System-Updates mit verschiedenen AUR-Helfern.
+Ein einfaches Werkzeug zur Verwaltung von Systemaktualisierungen mit verschiedenen AUR-Helfern.
 
 ## Beschreibung
 
-Update-Helper ist ein Dienstprogramm für Arch Linux und verwandte Distributionen, das den Prozess der Systemaktualisierung mit verschiedenen AUR-Helfern (Yay, Paru, Pamac) vereinfacht.
+Update-Helper ist ein Dienstprogramm für Arch Linux und verwandte Distributionen, das den Prozess der Systemaktualisierung mit verschiedenen AUR-Helfern (Yay, Paru) vereinfacht. Es bietet eine benutzerfreundliche Schnittstelle, um AUR-Pakete einfach zu aktualisieren.
+
+## Funktionen
+
+* **Unterstützung für mehrere AUR-Helfer:** Funktioniert mit Yay und Paru.
+* **Einfache Einrichtung:** Einmalige Einrichtung mit Sprachauswahl und AUR-Helfer-Auswahl.
+* **Desktop-Integration:** Option zur Erstellung einer Desktop-Datei für einfachen Start.
+* **Systemweite Installation möglich:** Kann sowohl lokal als auch systemweit installiert werden.
 
 ## Installation
 
-1. Klone das Repository oder lade die Dateien herunter
-2. Stelle sicher, dass die erforderlichen Verzeichnisse und Dateien vorhanden sind:
-   - `settings/` Verzeichnis
-   - `AUR-Helpers/` Verzeichnis mit den entsprechenden Python-Skripten
+1.  **Repository klonen oder Dateien herunterladen:**
+
+    Klone das Repository mit Git:
+
+    ```bash
+    git clone [https://github.com/your-username/update-helper.git](https://github.com/your-username/update-helper.git)
+    cd update-helper
+    ```
+
+    Oder lade die Dateien als ZIP-Archiv herunter und entpacke sie.
+
+2.  **Verzeichnisse und Dateien sicherstellen:**
+
+    Stelle sicher, dass die folgenden Verzeichnisse und Dateien vorhanden sind:
+
+    * `settings/` Verzeichnis
+    * `AUR-Helpers/` Verzeichnis mit den entsprechenden Python-Skripten
 
 ## Verwendung
 
 ### Erster Start
 
-- Sicherstellen das du Python3 hast.
-- dann fuehre diesen Command aus: ```python3 startup.py```
+1.  **Python 3 installieren:**
 
-Beim ersten Start führt das Programm durch eine Einrichtung:
-1. Sprachauswahl (Deutsch oder Englisch)
-2. Auswahl des bevorzugten AUR-Helfers (Yay, Paru oder Pamac)
+    Stelle sicher, dass Python 3 auf deinem System installiert ist.
+
+2.  **Skript ausführen:**
+
+    Führe das `startup.py` Skript aus:
+
+    ```bash
+    python3 startup.py
+    ```
+
+    Beim ersten Start wirst du durch einen Einrichtungsprozess geführt:
+
+    1.  Sprachauswahl (Deutsch oder Englisch)
+    2.  Auswahl des bevorzugten AUR-Helfers (Yay oder Paru)
 
 ### Desktop-Datei einrichten
 
-Um den Update-Helper einfach starten zu können, erstelle eine Desktop-Datei:
+Um den Update-Helper einfach über dein Desktop-Menü zu starten, kannst du eine Desktop-Datei einrichten:
 
-1. Kopiere die `updater.desktop` Datei in das lokale Anwendungsverzeichnis:
-   ```
-   cp updater.desktop ~/.local/share/applications/
-   ```
+1.  **Datei kopieren:**
 
-2. Bearbeite die Datei, um den korrekten Pfad anzugeben:
-   - Setze `Path=/pfad/zum/update-helper`
-   - Setze `Exec=python3 /pfad/zum/update-helper/startup.py`
-   - Setze `Icon=/pfad/zum/icon` (optional)
+    Kopiere die `updater.desktop` Datei in das lokale Anwendungsverzeichnis:
 
-3. Mache die Desktop-Datei ausführbar:
-   ```
-   chmod +x ~/.local/share/applications/updater.desktop
-   ```
+    ```bash
+    cp updater.desktop ~/.local/share/applications/
+    ```
 
-Alternativ für systemweite Installation:
-1. Kopiere die Dateien nach `/opt/Update-Helper/`
-2. Kopiere die Desktop-Datei nach `/usr/share/applications/`
+2.  **Datei bearbeiten:**
 
-## Du hast einen Fehler gefunden oder ein Verbesserung Vorschlag? Melde dich gerne bei mir!
----
+    Bearbeite die Datei `~/.local/share/applications/updater.desktop` mit einem Texteditor, um die korrekten Pfade anzugeben:
 
-# Update-Helper
+    * Setze `Path=/pfad/zum/update-helper` (z.B. `/home/benutzername/update-helper`)
+    * Setze `Exec=python3 /pfad/zum/update-helper/startup.py` (z.B. `/home/benutzername/update-helper/startup.py`)
+    * Setze `Icon=/pfad/zum/icon` (optional, Pfad zu einem Icon-Bild)
 
-A simple tool for managing system updates with various AUR helpers.
+3.  **Datei ausführbar machen:**
 
-## Description
+    Mache die Desktop-Datei ausführbar:
 
-Update-Helper is a utility for Arch Linux and related distributions that simplifies the process of system updating using various AUR helpers (Yay, Paru, Pamac).
+    ```bash
+    chmod +x ~/.local/share/applications/updater.desktop
+    ```
 
-## Installation
+### Systemweite Installation
 
-1. Clone the repository or download the files
-2. Ensure the required directories and files are present:
-   - `settings/` directory
-   - `AUR-Helpers/` directory with the appropriate Python scripts
+Für eine systemweite Installation:
 
-## Usage
+1.  **Dateien kopieren:**
 
-### First Run
+    Kopiere die Dateien nach `/opt/Update-Helper/`:
 
-- Have python3 installed
-- run the command: ```python3 startup.py```
+    ```bash
+    sudo cp -r . /opt/Update-Helper/
+    ```
 
-On first run, the program guides you through a setup process:
-1. Language selection (German or English)
-2. Selection of preferred AUR helper (Yay, Paru, or Pamac)
+2.  **Desktop-Datei kopieren:**
 
-### Setting up the Desktop File
+    Kopiere die Desktop-Datei nach `/usr/share/applications/`:
 
-To easily launch the Update-Helper, set up a desktop file:
+    ```bash
+    sudo cp updater.desktop /usr/share/applications/
+    ```
 
-1. Copy the `updater.desktop` file to the local applications directory:
-   ```
-   cp updater.desktop ~/.local/share/applications/
-   ```
+    Passe die Pfade in der `updater.desktop` Datei entsprechend an (wie oben beschrieben).
 
-2. Edit the file to specify the correct path:
-   - Set `Path=/path/to/update-helper`
-   - Set `Exec=python3 /path/to/update-helper/startup.py`
-   - Set `Icon=/path/to/icon` (optional)
+### Pamac
 
-3. Make the desktop file executable:
-   ```
-   chmod +x ~/.local/share/applications/updater.desktop
-   ```
+**Pamac wird derzeit nicht unterstützt.** Dieses Tool ist auf die Verwendung von Yay und Paru beschränkt.
 
-Alternatively, for system-wide installation:
-1. Copy the files to `/opt/Update-Helper/`
-2. Copy the desktop file to `/usr/share/applications/`
+## Fehler melden und Vorschläge machen
 
-
-### Pamac currently not Supported.
+Wenn du einen Fehler findest oder einen Verbesserungsvorschlag hast, melde dich bitte im [Issue Tracker](https://github.com/your-username/update-helper/issues) des Projekts.
