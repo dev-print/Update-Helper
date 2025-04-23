@@ -133,3 +133,4 @@ elif get_setup_file == "false":
 
         elif check_helper == "paru":
             os.system("python3 menu.py")
+
