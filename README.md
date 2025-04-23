@@ -18,7 +18,7 @@ Update-Helper ist ein Dienstprogramm für Arch Linux und verwandte Distributione
 ### Erster Start
 
 - Sicherstellen das du Python3 hast.
-- dann fuehre diesen Command aus: ```py python3 startup.py```
+- dann fuehre diesen Command aus: ```python3 startup.py```
 
 Beim ersten Start führt das Programm durch eine Einrichtung:
 1. Sprachauswahl (Deutsch oder Englisch)
