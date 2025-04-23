@@ -66,15 +66,8 @@ Um den Update-Helper einfach über dein Desktop-Menü zu starten, kannst du eine
     cp updater.desktop ~/.local/share/applications/
     ```
 
-2.  **Datei bearbeiten:**
 
-    Bearbeite die Datei `~/.local/share/applications/updater.desktop` mit einem Texteditor, um die korrekten Pfade anzugeben:
-
-    * Setze `Path=/pfad/zum/update-helper` (z.B. `/home/benutzername/update-helper`)
-    * Setze `Exec=python3 /pfad/zum/update-helper/startup.py` (z.B. `/home/benutzername/update-helper/startup.py`)
-    * Setze `Icon=/pfad/zum/icon` (optional, Pfad zu einem Icon-Bild)
-
-3.  **Datei ausführbar machen:**
+2.  **Datei ausführbar machen:**
 
     Mache die Desktop-Datei ausführbar:
 
