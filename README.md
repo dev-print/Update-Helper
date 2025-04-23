@@ -69,6 +69,9 @@ Update-Helper is a utility for Arch Linux and related distributions that simplif
 
 ### First Run
 
+- Have python3 installed
+- run the command: ```python3 startup.py```
+
 On first run, the program guides you through a setup process:
 1. Language selection (German or English)
 2. Selection of preferred AUR helper (Yay, Paru, or Pamac)
