@@ -112,6 +112,9 @@ Für eine systemweite Installation:
 
 Wenn du einen Fehler findest oder einen Verbesserungsvorschlag hast, melde dich bitte im [Issue Tracker](https://github.com/dev-print/update-helper/issues) des Projekts.
 
+## Notizen
+
+Hier kannst du deine persönlichen Notizen einfügen:
 ---
 
 # Update-Helper
@@ -227,3 +230,8 @@ For a system-wide installation:
 ## Report Bugs and Suggestions
 
 If you find a bug or have a suggestion for improvement, please report it in the project's [Issue Tracker](https://github.com/dev-print/update-helper/issues).
+
+### Todos
+1. Add something like noprogressbar to paru.
+2. add more menu options to change the settings and more.
+3. IDK
