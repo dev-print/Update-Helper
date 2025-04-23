@@ -116,4 +116,4 @@ print("""Pamac isnt Supported at this Moment!
       2. Im alone on this Project
       3. Im sitting here like 7-8 Hours now.
       4. Im lazy.
-      Sorry, in the next Update pamac shall be Supported.""")
+      Sorry, in the next Update pamac shall be Supported. (i lied its version 1.1 and its still not here)""")
