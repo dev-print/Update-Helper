@@ -225,6 +225,6 @@ For a system-wide installation:
 If you find a bug or have a suggestion for improvement, please report it in the project's [Issue Tracker](https://github.com/dev-print/update-helper/issues).
 
 ### Todos
-1. Add something like noprogressbar to paru.
-2. add more menu options to change the settings and more.
-3. IDK
+~~Add something like noprogressbar to paru.~~
+~~add more menu options to change the settings and more.~~
+1. IDK
