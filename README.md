@@ -20,7 +20,7 @@ Update-Helper ist ein Dienstprogramm für Arch Linux und verwandte Distributione
     Klone das Repository mit Git:
 
     ```bash
-    git clone [https://github.com/your-username/update-helper.git](https://github.com/your-username/update-helper.git)
+    git clone [https://github.com/dev-print/update-helper.git](https://github.com/dev-print/update-helper.git)
     cd update-helper
     ```
 
@@ -110,4 +110,4 @@ Für eine systemweite Installation:
 
 ## Fehler melden und Vorschläge machen
 
-Wenn du einen Fehler findest oder einen Verbesserungsvorschlag hast, melde dich bitte im [Issue Tracker](https://github.com/your-username/update-helper/issues) des Projekts.
+Wenn du einen Fehler findest oder einen Verbesserungsvorschlag hast, melde dich bitte im [Issue Tracker](https://github.com/dev-print/update-helper/issues) des Projekts.
