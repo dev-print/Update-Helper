@@ -176,11 +176,12 @@ def Updates_EN():
 with open("settings/language.txt", "r") as language:
   language_selected = language.read().strip()
 
-  if language_selected == "de":
+
+if language_selected == "de":
     os.system('clear')
     print(DE_BANNERS.Start)
 
-    # TODO - Einstellungen und mehr hinzu tuen.
+    
     DE_START_FRAGE = input("Willkommen, soll ich nach Updates suchen? (y/n): ")
 
     if DE_START_FRAGE == "y":
@@ -215,7 +216,7 @@ with open("settings/language.txt", "r") as language:
     elif language_selected == "en":
       print(EN_BANNERS.Start)
       
-      # TODO - Add Settings and More.
+      
       EN_Start_Question = input("Welcome, shall i search for Updates? (y/n): ")
 
       if EN_Start_Question == "y".lower():
