@@ -153,7 +153,7 @@ def Updates_EN():
     os.system("clear")
     print(EN_BANNERS.Start_Updates)
 
-    # TODO - idk if i can add --noprogressbar
+    # TODO - idk if i can add --noprogressbar oh wait... i did stdout to devnull WOW
     Updating_EN = subprocess.call(["paru", "--noconfirm"], stdout=subprocess.DEVNULL)
 
     if Updating_EN == 0:
@@ -181,7 +181,7 @@ with open("settings/language.txt", "r") as language:
     os.system('clear')
     print(DE_BANNERS.Start)
 
-    # TODO - Einstellungen und mehr hinzu tuen.
+    
     DE_START_FRAGE = input("Willkommen, soll ich nach Updates suchen? (y/n): ")
 
     if DE_START_FRAGE == "y":
@@ -216,7 +216,7 @@ with open("settings/language.txt", "r") as language:
     elif language_selected == "en":
       print(EN_BANNERS.Start)
       
-      # TODO - Add Settings and More.
+      
       EN_Start_Question = input("Welcome, shall i search for Updates? (y/n): ")
 
       if EN_Start_Question == "y".lower():
